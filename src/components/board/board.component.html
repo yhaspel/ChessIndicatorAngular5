@@ -1,0 +1,25 @@
+<div class="chessboard-container">
+    <div class="chessboard">
+        <div 
+            class="board-row" 
+            *ngFor="let row of board; index as i">
+            <div 
+                class="board-cell" 
+                [class.black]="(i+j)%2==0" 
+                [class.white]="(i+j)%2!=0" 
+                [class.possible-move]="possibleMoves[i][j].available"
+                [class.possible-takedown]="possibleMoves[i][j].takedown"
+                *ngFor="let cell of row; index as j; let odd = odd; let even = even">
+                <div *ngIf="cell === null"></div>
+                <div *ngIf="cell !== null" [innerHTML]="cell?.htmlTag" (click)="cellClicked(cell, i, j)"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="button-container">
+        <button class="button" (click)="initializeBoard()">Initialize</button>
+        <button class="button" (click)="randomizeBoard()">Randomize</button>
+        <button class="button" (click)="clearBoard()">Clear</button>
+    </div>
+</div>

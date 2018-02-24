@@ -1,0 +1,76 @@
+.chessboard-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.chessboard {
+    border: 1px solid black;
+    width: 640px;
+    .board-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        .board-cell {
+            border: 1px solid black;
+            &:hover {
+                border: 1px solid white;
+                opacity: 0.8;
+                cursor: pointer;
+            }
+            &.possible-move {
+                border: 1px solid green;
+                background-color: lightgreen;
+            }
+            &.possible-takedown {
+                border: 1px solid red;
+                background-color: rgb(255, 79, 105);
+            }
+        }
+    }
+    .black {
+        float: left;
+        width: 80px;
+        height: 80px;
+        background-color: #999;
+        font-size:50px;
+        text-align:center;
+        display: table-cell;
+        vertical-align:middle;
+    }
+    .white {
+        float: left;
+        width: 80px;
+        height: 80px;
+        background-color: #fff;
+        font-size:50px;
+        text-align:center;
+        display: table-cell;
+        vertical-align:middle;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .button-container {
+        padding: 36px;
+        .button {
+            cursor: pointer;
+            margin: 0 6px;
+            height: 35px;
+            line-height: 35px;
+            background-color: white;
+            border: 1px solid blanchedalmond;
+            box-shadow: 1px 3px 3px 3px gray;
+            &:hover {
+                box-shadow: 1px 1px 1px 1px gray;
+            }
+            &:active {
+                box-shadow: none;
+            }
+        }
+    }
+}
