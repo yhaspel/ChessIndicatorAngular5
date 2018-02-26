@@ -78,7 +78,7 @@ export class BoardComponent {
         }
     }
 
-    private randomizeBoard() {
+    randomizeBoard() {
         this.clearBoard();
         this.clearPossibleMoves();
         let remainingPieces = this.pieces.concat();
